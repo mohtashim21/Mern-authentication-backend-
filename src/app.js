@@ -8,12 +8,14 @@ const app = express();
 
 app.use(cookieParser());
 
-const corsOptions = {
-  origin: 'https://mern-authentication-app.netlify.app',
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: 'https://mern-authentication-app.netlify.app',
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors())
 
 app.use(express.json());
 
