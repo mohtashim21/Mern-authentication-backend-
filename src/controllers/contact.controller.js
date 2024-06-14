@@ -14,17 +14,11 @@ export const getAllContacts = async (req, res) => {
 export const addContact = async (req, res) => {
   try {
     const { name, contactNumber, email } = req.body;
-    const contact = new Contact({
-      name,
-      contactNumber,
-      email,
-      user: req.userId,
-    });
+    const contact = new Contact({ name, contactNumber, email, user: req.userId });
     await contact.save();
-    res.status(201).send("Contact added");
-    console.log(contact);
+    res.status(201).json({ message: "Contact added", contact });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ message: "Server error" });
   }
 };
