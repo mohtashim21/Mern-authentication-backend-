@@ -6,14 +6,13 @@ import {
   deleteContact,
   deleteAllContact,
 } from "../controllers/contact.controller.js";
-import { authMiddleware } from "../middleware/auth.js";
 
 const router = Router();
 
-router.get("/", authMiddleware, getAllContacts);
-router.post("/", authMiddleware, addContact);
-router.delete("/:id", authMiddleware, deleteContact);
-router.delete("/", authMiddleware, deleteAllContact);
-router.put("/:id", authMiddleware, updateContact);
+router.get("/", getAllContacts);
+router.post("/", addContact);
+router.delete("/:id", deleteContact);
+router.delete("/", deleteAllContact);
+router.put("/:id", updateContact);
 
 export default router;
