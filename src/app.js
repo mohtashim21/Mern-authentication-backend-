@@ -9,13 +9,11 @@ const app = express();
 app.use(cookieParser());
 
 const corsOptions = {
-  // origin: 'https://mern-authentication-app.netlify.app',
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://mern-authentication-app.netlify.app'],
   credentials: true,
 };
 
 app.use(cors(corsOptions));
-
 
 app.use(express.json());
 
