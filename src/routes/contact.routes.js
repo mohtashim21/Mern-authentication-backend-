@@ -6,7 +6,6 @@ import {
   deleteContact,
   deleteAllContact,
 } from "../controllers/contact.controller.js";
-import { authMiddleware } from "../middleware/auth.js";
 
 const router = Router();
 
